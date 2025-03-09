@@ -1,0 +1,36 @@
+<template>
+    <lightning-card icon-name="standard:opportunity" title="Currency Converter">
+        <div class="inputClass">
+        <lightning-input class="slds-p-around_small" title="Enter Amount" label="Enter Amount" onchange={amountChangeHandler} type="number"></lightning-input>
+    </div>
+    <div>
+        <lightning-layout>
+            <lightning-layout-item padding="around-small">
+                <lightning-combobox
+                    name="fromCurrency"
+                    label="From Currency"
+                    value={value}
+                    placeholder=""
+                    options={options}
+                    onchange={handleChange} >
+                </lightning-combobox>
+            </lightning-layout-item>
+            
+            <lightning-layout-item padding="around-small">
+                <lightning-combobox
+                    name="toCurrency"
+                    label="To Currency"
+                    value={value}
+                    placeholder=""
+                    options={options}
+                    onchange={handleChange} >
+                </lightning-combobox>
+            </lightning-layout-item>
+        </lightning-layout>
+        <lightning-layout class='slds-p-left_small'>
+            <lightning-button type="submit" variant="brand" onclick={buttonClickHandler} label="Submit" ></lightning-button>
+        </lightning-layout>
+        <lightning-formatted-text>Here Value will be shown</lightning-formatted-text>
+    </div>
+    </lightning-card>
+</template>
