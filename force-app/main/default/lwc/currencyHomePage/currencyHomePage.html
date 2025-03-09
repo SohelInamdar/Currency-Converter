@@ -27,10 +27,21 @@
                 </lightning-combobox>
             </lightning-layout-item>
         </lightning-layout>
+    </div>
+        <div>
         <lightning-layout class='slds-p-left_small'>
             <lightning-button type="submit" variant="brand" onclick={buttonClickHandler} label="Submit" ></lightning-button>
         </lightning-layout>
-        <lightning-formatted-text>Here Value will be shown</lightning-formatted-text>
+    </div>
+    <div>
+        <template lwc:if={displayData}>
+            <p class="slds-p-around_small fancyClass">Converted Value : 
+            
+                <lightning-formatted-number value={displayValue} format-style="currency" currency-code={enteredToValue} currency-display-as="name">
+                </lightning-formatted-number>
+            </p>
+        </template>
+        
     </div>
     </lightning-card>
 </template>
